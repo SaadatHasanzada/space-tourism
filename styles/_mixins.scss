@@ -1,0 +1,89 @@
+@mixin base-text($font-size, $line-height, $letter-spacing, $font-family) {
+  font-size: $font-size;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+  font-family: $font-family;
+}
+@mixin text-1 {
+  @include base-text(144px, normal, 0px, var(--font-bellefair));
+}
+
+@mixin text-mobile-1 {
+  @include base-text(80px, normal, 0px, var(--font-bellefair));
+}
+
+@mixin text-2 {
+  @include base-text(96px, normal, 0px, var(--font-bellefair));
+}
+
+@mixin text-ipad-2 {
+  @include base-text(80px, normal, 0px, var(--font-bellefair));
+}
+
+@mixin text-mobile-2 {
+  @include base-text(56px, normal, 0px, var(--font-bellefair));
+}
+
+@mixin text-3 {
+  @include base-text(56px, normal, 0px, var(--font-bellefair));
+}
+
+@mixin text-ipad-3 {
+  @include base-text(40px, normal, 0px, var(--font-bellefair));
+}
+
+@mixin text-mobile-3 {
+  @include base-text(24px, normal, 0px, var(--font-bellefair));
+}
+
+@mixin text-4 {
+  @include base-text(32px, normal, 0px, var(--font-bellefair));
+}
+
+@mixin text-ipad-4 {
+  @include base-text(24px, normal, 0px, var(--font-bellefair));
+}
+
+@mixin text-mobile-4 {
+  @include base-text(18px, normal, 0px, var(--font-bellefair));
+}
+
+@mixin text-5 {
+  @include base-text(28px, normal, 4px, var(--font-barlow));
+}
+
+@mixin text-ipad-5 {
+  @include base-text(20px, normal, 4px, var(--font-barlow));
+}
+
+@mixin text-6 {
+  @include base-text(28px, normal, 0px, var(--font-bellefair));
+}
+
+@mixin text-mobile-6 {
+  @include base-text(16px, normal, 2px, var(--font-barlow));
+}
+
+@mixin text-7 {
+  @include base-text(14px, normal, 2px, var(--font-barlow));
+}
+
+@mixin text-8 {
+  @include base-text(16px, normal, 2px, var(--font-barlow));
+}
+
+@mixin text-mobile-8 {
+  @include base-text(14px, normal, 2px, var(--font-barlow));
+}
+
+@mixin text-9 {
+  @include base-text(18px, 180%, 0px, var(--font-barlow-reg));
+}
+
+@mixin text-ipad-9 {
+  @include base-text(16px, 180%, 0px, var(--font-barlow-reg));
+}
+
+@mixin text-mobile-9 {
+  @include base-text(15px, 180%, 0px, var(--font-barlow-reg));
+}
