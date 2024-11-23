@@ -5,7 +5,10 @@
   display: flex;
   gap: 30px;
   justify-content: space-between;
+  padding-bottom: 70px;
+
   @media (max-width: 1024px) {
+    padding-bottom: 40px;
     flex-direction: column;
     gap: unset;
     align-items: center;

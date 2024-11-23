@@ -1,13 +1,8 @@
 @use "../../styles/mixins";
 @use "../../styles/variables";
 .destination {
-  padding: 48px 64px 0 0;
   @media (max-width: 1024px) {
-    padding: 40px 40px 0 0;
     max-width: unset;
-  }
-  @media (max-width: 767px) {
-    padding: 48px 24px 0 0;
   }
 
   .title {
@@ -37,16 +32,18 @@
     display: flex;
     justify-content: space-between;
     gap: 62px;
-    padding-bottom: 60px;
+    padding-bottom: 150px;
     @media (max-width: 1024px) {
       flex-direction: column;
       gap: 84px;
       align-items: center;
       max-width: 514px;
       margin: 0 auto;
+      padding-bottom: 66px;
     }
     @media (max-width: 767px) {
       gap: 58px;
+      padding-bottom: 50px;
     }
 
     .destination_image {

@@ -1,0 +1,171 @@
+@use "../../styles/mixins";
+@use "../../styles/variables";
+
+.crew {
+  @media (max-width: 1024px) {
+    max-width: unset;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .title {
+    @include mixins.text-5;
+    color: #fff;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    font-weight: 400;
+
+    span {
+      opacity: 25%;
+      letter-spacing: 4.72px;
+      font-weight: bold;
+      margin-right: 24px;
+    }
+    @media (max-width: 1024px) {
+      @include mixins.text-ipad-5;
+      margin-bottom: 64px;
+    }
+    @media (max-width: 767px) {
+      @include mixins.text-mobile-6;
+      text-align: center;
+      margin-bottom: 64px;
+    }
+  }
+  .crew_info {
+    display: flex;
+    gap: 50px;
+    align-items: stretch;
+    padding-bottom: 80px;
+
+    @media (max-width: 1024px) {
+      flex-direction: column;
+      gap: 32px;
+      align-items: center;
+      padding-bottom: 0;
+      justify-content: space-between;
+      flex: 1;
+    }
+    @media (max-width: 767px) {
+      padding-bottom: 24px;
+    }
+    .crew_image {
+      width: 500px;
+      img {
+        width: 100%;
+        height: auto;
+        max-height: 676px;
+        -webkit-mask-image: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 1) 77%,
+          rgba(0, 0, 0, 0) 100%
+        );
+        mask-image: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 1) 77%,
+          rgba(0, 0, 0, 0) 100%
+        );
+        -webkit-mask-size: cover;
+        mask-size: cover;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+      }
+      @media (max-width: 1024px) {
+        width: 415px;
+        img {
+          max-height: 560px;
+        }
+      }
+      @media (max-width: 767px) {
+        width: 271px;
+        max-width: 100%;
+        img {
+          max-height: 340px;
+        }
+      }
+    }
+    .crew_container {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      @media (max-width: 1024px) {
+        text-align: center;
+        flex: unset;
+        flex-direction: column;
+        max-width: 512px;
+      }
+      .crew_role {
+        @include mixins.text-4;
+        color: rgba(255, 255, 255, 50%);
+        margin-bottom: 16px;
+        text-transform: uppercase;
+        font-weight: 400;
+        @media (max-width: 1024px) {
+          @include mixins.text-ipad-4;
+        }
+        @media (max-width: 767px) {
+          @include mixins.text-mobile-4;
+          margin-bottom: 8px;
+        }
+      }
+      h2 {
+        @include mixins.text-3;
+        color: #fff;
+        text-transform: uppercase;
+        font-weight: 400;
+        margin-bottom: 24px;
+        @media (max-width: 1024px) {
+          @include mixins.text-ipad-3;
+        }
+        @media (max-width: 767px) {
+          @include mixins.text-mobile-3;
+        }
+      }
+      .crew_bio {
+        @include mixins.text-9;
+        color: variables.$blue-light;
+        @media (max-width: 1024px) {
+          @include mixins.text-ipad-9;
+          margin-bottom: 32px;
+        }
+        @media (max-width: 767px) {
+          @include mixins.text-mobile-9;
+          margin-bottom: 48px;
+        }
+      }
+      .crew_menu {
+        display: flex;
+        gap: 40px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        @media (max-width: 1024px) {
+          position: unset;
+          margin: 0 auto;
+          gap: 16px;
+        }
+        button {
+          width: 15px;
+          height: 15px;
+          border-radius: 50%;
+          outline: none;
+          background-color: rgba(255, 255, 255, 17.44%);
+          cursor: pointer;
+          transition: all 0.5s;
+          @media (max-width: 1024px) {
+            width: 10px;
+            height: 10px;
+          }
+          &:hover {
+            transition: all 0.5s;
+            background-color: rgba(255, 255, 255, 50%);
+          }
+          &.active {
+            background-color: #fff;
+          }
+        }
+      }
+    }
+  }
+}
