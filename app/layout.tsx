@@ -1,27 +1,29 @@
-import type { Metadata } from "next";
 import "./globals.scss";
+
+import { Barlow, Barlow_Condensed, Bellefair } from "next/font/google";
+
 import Header from "@/components/header/header";
+import type { Metadata } from "next";
 import { PageWrapper } from "@/components/page-wrapper";
-import { Barlow_Condensed, Bellefair, Barlow } from "next/font/google";
 
 export const metadata: Metadata = {
   title: "Space Tourism",
   description: "Space Tourism Website",
 };
 
-export const barlow = Barlow_Condensed({
+const barlow = Barlow_Condensed({
   weight: ["300", "400"],
   variable: "--font-barlow",
   subsets: ["latin"],
   display: "swap",
 });
-export const barlowReg = Barlow({
+const barlowReg = Barlow({
   weight: ["300", "400"],
   variable: "--font-barlow-reg",
   subsets: ["latin"],
   display: "swap",
 });
-export const bellefair = Bellefair({
+const bellefair = Bellefair({
   variable: "--font-bellefair",
   subsets: ["latin"],
   weight: "400",
