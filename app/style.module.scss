@@ -6,7 +6,7 @@
   gap: 30px;
   justify-content: space-between;
   padding-bottom: 70px;
-  height: calc(100vh - 136px);
+  height: calc(100svh - 136px);
 
   @media (max-width: 1024px) {
     padding-bottom: 40px;
@@ -14,10 +14,10 @@
     gap: unset;
     align-items: center;
     justify-content: center;
-    height: calc(100vh - 96px);
+    height: calc(100svh - 96px);
   }
   @media (max-width: 767px) {
-    height: calc(100vh - 68px);
+    height: calc(100svh - 68px);
   }
 }
 .page_content {
