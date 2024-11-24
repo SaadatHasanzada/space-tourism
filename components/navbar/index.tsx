@@ -1,20 +1,33 @@
 "use client";
+
+import { useEffect, useRef } from "react";
+
+import type { FC } from "react";
+import Image from "next/image";
 import Link from "next/link";
+import closeIcon from "@/public/shared/icon-close.svg";
 import style from "./style.module.scss";
 import { usePathname } from "next/navigation";
-import closeIcon from "@/public/shared/icon-close.svg";
-import Image from "next/image";
-import { FC } from "react";
-import { useRef, useEffect } from "react";
+
 interface NavProps {
   isOpen: boolean;
   onClose: () => void;
 }
 
+const NAV_ITEMS = [
+  { path: "/", number: "00", label: "HOME" },
+  { path: "/destination", number: "01", label: "DESTINATION" },
+  { path: "/crew", number: "02", label: "CREW" },
+  { path: "/technology", number: "03", label: "TECHNOLOGY" },
+] as const;
+
 export const Navbar: FC<NavProps> = ({ isOpen, onClose }) => {
   const pathname = usePathname();
   const navbarRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
+    if (!isOpen) return;
+
     const handleClickOutside = (event: MouseEvent) => {
       if (
         navbarRef.current &&
@@ -23,48 +36,39 @@ export const Navbar: FC<NavProps> = ({ isOpen, onClose }) => {
         onClose();
       }
     };
-    if (isOpen) {
-      document.addEventListener("click", handleClickOutside);
-    }
-    return () => {
-      document.removeEventListener("click", handleClickOutside);
-    };
-  }, [isOpen]);
+
+    document.addEventListener("click", handleClickOutside);
+    return () => document.removeEventListener("click", handleClickOutside);
+  }, [isOpen, onClose]);
 
   return (
     <div
       ref={navbarRef}
       className={`${style.navbar} ${isOpen ? style.isOpen : ""}`}
     >
-      <button className={style.close_btn} onClick={onClose}>
+      <button
+        className={style.close_btn}
+        onClick={onClose}
+        aria-label="Close navigation menu"
+      >
         <Image src={closeIcon} alt="Close icon" />
       </button>
-      <ul className={style.nav_list}>
-        <li className={pathname === "/" ? style.active : ""}>
-          <Link href="/">
-            <span>00</span>
-            HOME
-          </Link>
-        </li>
-        <li className={pathname === "/destination" ? style.active : ""}>
-          <Link href="/destination">
-            <span>01</span>
-            DESTINATION
-          </Link>
-        </li>
-        <li className={pathname === "/crew" ? style.active : ""}>
-          <Link href="/crew">
-            <span>02</span>
-            CREW
-          </Link>
-        </li>
-        <li className={pathname === "/technology" ? style.active : ""}>
-          <Link href="/technology">
-            <span>03</span>
-            TECHNOLOGY
-          </Link>
-        </li>
-      </ul>
+      <nav>
+        <ul className={style.nav_list}>
+          {NAV_ITEMS.map(({ path, number, label }) => (
+            <li
+              key={path}
+              onClick={onClose}
+              className={pathname === path ? style.active : ""}
+            >
+              <Link href={path}>
+                <span>{number}</span>
+                {label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
     </div>
   );
 };
