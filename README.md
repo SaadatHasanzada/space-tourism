@@ -1,6 +1,6 @@
 # Space tourism multi-page website
 
-A responsive multi-page website for space tourism enthusiasts.
+"I created this project to improve my skills in Next.js and learn more about building responsive, server-side rendered web applications. This is my first project using Next.js, and it was a great learning experience exploring its features like page routing, responsive design, etc."
 
 ## Table of Contents
 - [Features](#features)
