@@ -1,4 +1,32 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Space tourism multi-page website
+
+A responsive multi-page website for space tourism enthusiasts.
+
+## Table of Contents
+- [Features](#features)
+- [Live Demo](#live-demo)
+- [Technologies Used](#technologies-used)
+- [Getting Started](#getting-started)
+
+
+
+## Features
+
+- View each page and be able to toggle between the tabs to see new information
+- View the optimal layout for each of the website's pages depending on their device's screen size
+- See hover states for all interactive elements on the page
+
+
+## Live Demo
+Live Site URL: [Space tourism multi-page website](https://space-tourism-next.netlify.app/)
+
+
+
+## Technologies Used
+- Next.js
+- TypeScript
+- Module Sass
+
 
 ## Getting Started
 
